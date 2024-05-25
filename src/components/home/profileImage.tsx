@@ -2,6 +2,8 @@
 import { useMediaQuery } from "@/hooks/useMediaQuery";
 import Image from "next/image";
 import { useState } from "react";
+import { Skeleton } from "../ui/skeleton";
+import { cn } from "@/lib/utils";
 
 const ProfileImage = () => {
   const isMobile = useMediaQuery("(max-width: 640px)");
@@ -16,15 +18,15 @@ const ProfileImage = () => {
           alt="mahmoud helal"
           fill
           objectFit="cover"
-          onLoad={() => setLoaded(true)}
-          onError={() => setLoaded(true)}
+          // onLoad={() => setLoaded(true)}
+          // onError={() => setLoaded(true)}
           className="rounded-full sm:rounded-[20px] invisible"
           priority={true}
           quality={100}
         />
       )}
       {!loaded && (
-        <div className="w-full h-full bg-background rounded-full sm:rounded-[20px]" />
+        <Skeleton className="w-full h-full bg-background rounded-full sm:rounded-[20px]" />
       )}
       {loaded && (
         <Image
