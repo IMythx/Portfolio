@@ -18,7 +18,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
           fill
           onLoad={() => setLoaded(true)}
           onError={() => setLoaded(true)}
-          className="object-cover opacity-0"
+          className="object-cover invisible"
         />
       )}
       {!loaded && <Skeleton className="w-full h-[240px] bg-background" />}
