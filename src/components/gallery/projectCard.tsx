@@ -16,8 +16,8 @@ const ProjectCard = ({ project }: { project: Project }) => {
           src={project.thumbnail}
           alt={project.name}
           fill
-          // onLoad={() => setLoaded(true)}
-          // onError={() => setLoaded(true)}
+          onLoad={() => setLoaded(true)}
+          onError={() => setLoaded(true)}
           className="object-cover invisible"
         />
       )}
