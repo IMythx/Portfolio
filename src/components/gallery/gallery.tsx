@@ -1,8 +1,8 @@
 "use client";
 import { useAnimate, stagger, motion } from "framer-motion";
-import Image from "next/image";
 import { useEffect } from "react";
 import ProjectModal from "./projectModal";
+import ProjectCard from "./projectCard";
 
 const Gallery = ({ projects }: { projects: Project[] }) => {
   const [scope, animate] = useAnimate();
@@ -31,17 +31,7 @@ const Gallery = ({ projects }: { projects: Project[] }) => {
     >
       {projects.map((project, i) => (
         <ProjectModal key={i} project={project}>
-          <motion.div
-            className={`cursor-pointer rounded-lg overflow-hidden relative before:opacity-0 before:absolute before:inset-0 before:-top-2.5 before:z-10 before:bg-primary-portfolio before:content-data-content before:text-2xl before:flex before:items-center before:justify-center min-h-[240px] hover:before:opacity-100 hover:before:translate-y-[10px] before:transition-all before:duration-500`}
-            data-content={project.name}
-          >
-            <Image
-              src={project.thumbnail}
-              alt={project.name}
-              fill
-              className="object-cover"
-            />
-          </motion.div>
+          <ProjectCard project={project} />
         </ProjectModal>
       ))}
     </motion.div>

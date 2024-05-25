@@ -20,14 +20,14 @@ import AnimatedButton from "../global/animatedButton";
 import { FaTelegramPlane } from "react-icons/fa";
 import { sendEmail } from "@/actions";
 import { toast } from "sonner";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoReload } from "react-icons/io5";
 
 const formSchema = z.object({
-  name: z.string(),
-  email: z.string().email(),
-  subject: z.string(),
-  message: z.string(),
+  name: z.string().min(1, "Required"),
+  email: z.string().email().min(1, "Required"),
+  subject: z.string().min(1, "Required"),
+  message: z.string().min(1, "Required"),
 });
 
 const ContactForm = () => {
@@ -42,11 +42,18 @@ const ContactForm = () => {
     const res: { ok: boolean } = await sendEmail(data);
     if (res.ok) {
       toast.success("Email sent successfully");
+      form.reset({
+        name: "",
+        email: "",
+        message: "",
+        subject: "",
+      });
     } else {
       toast.error("Failed to send email");
     }
     setIsSending(false);
   };
+
   return (
     <div className="flex flex-col sm:flex-row">
       <div className="grid gap-6 flex-1 h-fit">

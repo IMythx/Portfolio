@@ -18,7 +18,7 @@ const ProjectModal = ({
 }) => {
   return (
     <Dialog>
-      <DialogTrigger>{children}</DialogTrigger>
+      <DialogTrigger asChild>{children}</DialogTrigger>
       <DialogContent className="max-w-[90%] sm:max-w-[70%] gap-8">
         <DialogHeader className="w-full text-primary-portfolio text-2xl sm:text-3xl font-bold items-center">
           {project.name}
