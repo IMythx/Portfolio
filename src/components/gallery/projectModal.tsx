@@ -18,7 +18,12 @@ const ProjectModal = ({
 }) => {
   return (
     <Dialog>
-      <DialogTrigger asChild>{children}</DialogTrigger>
+      <DialogTrigger
+        className={`cursor-pointer rounded-lg overflow-hidden relative before:opacity-0 before:absolute before:inset-0 before:-top-2.5 before:z-10 before:bg-primary-portfolio before:content-data-content before:text-2xl before:flex before:items-center before:justify-center min-h-[240px] hover:before:opacity-100 hover:before:translate-y-[10px] before:transition-all before:duration-500`}
+        data-content={project.name}
+      >
+        {children}
+      </DialogTrigger>
       <DialogContent className="max-w-[90%] sm:max-w-[70%] gap-8">
         <DialogHeader className="w-full text-primary-portfolio text-2xl sm:text-3xl font-bold items-center">
           {project.name}

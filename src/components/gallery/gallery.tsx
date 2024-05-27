@@ -9,7 +9,7 @@ const Gallery = ({ projects }: { projects: Project[] }) => {
 
   useEffect(() => {
     animate(
-      "div",
+      "button",
       {
         x: [-70, 0],
         opacity: [0, 0.01, 0.1, 0.15, 1],
@@ -31,7 +31,7 @@ const Gallery = ({ projects }: { projects: Project[] }) => {
     >
       {projects.map((project, i) => (
         <ProjectModal key={i} project={project}>
-          <ProjectCard project={project} />
+          <ProjectCard project={project} key={i} />
         </ProjectModal>
       ))}
     </motion.div>
