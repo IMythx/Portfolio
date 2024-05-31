@@ -1,4 +1,4 @@
-const SinglePersonInfo = ({
+const SinglePersonalInfo = ({
   label,
   value,
 }: {
@@ -13,4 +13,4 @@ const SinglePersonInfo = ({
   );
 };
 
-export default SinglePersonInfo;
+export default SinglePersonalInfo;

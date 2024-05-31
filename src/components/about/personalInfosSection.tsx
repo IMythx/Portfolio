@@ -1,4 +1,4 @@
-import SinglePersonInfo from "./singlePersonInfo";
+import SinglePersonalInfo from "./singlePersonalInfo";
 import AnimatedButton from "../global/animatedButton";
 import { MdFileDownload } from "react-icons/md";
 
@@ -10,16 +10,24 @@ const PersonalInfoSection = () => {
         <div className="flex items-center gap-8 sm:gap-16">
           <div className="grid gap-6">
             {infos.slice(0, 4).map((info, i) => (
-              <SinglePersonInfo label={info.label} value={info.value} key={i} />
+              <SinglePersonalInfo
+                label={info.label}
+                value={info.value}
+                key={i}
+              />
             ))}
           </div>
           <div className="grid gap-6">
             {infos.slice(4).map((info, i) => (
-              <SinglePersonInfo label={info.label} value={info.value} key={i} />
+              <SinglePersonalInfo
+                label={info.label}
+                value={info.value}
+                key={i}
+              />
             ))}
           </div>
         </div>
-        <a href={"/mahmoud_helal_cv.pdf"} download>
+        <a href={"/mahmoud-helal-cv.pdf"} download="mahmoud helal">
           <AnimatedButton>
             <p className="font-semibold text-[13px]">DOWNLOAD CV</p>
             <div className="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-primary-portfolio flex items-center justify-center">
