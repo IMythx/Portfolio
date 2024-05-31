@@ -7,7 +7,7 @@ const PersonalInfoSection = () => {
     <div className="flex items-center flex-col sm:flex-row gap-8 sm:gap-0 pt-10">
       <div className="grid gap-6 flex-1">
         <p className="text-[1.8rem] tracking-[0.5px]">PERSONAL INFOS</p>
-        <div className="flex items-center gap-8 sm:gap-16">
+        <div className="flex items-center gap-4 sm:gap-16">
           <div className="grid gap-6">
             {infos.slice(0, 4).map((info, i) => (
               <SinglePersonalInfo
